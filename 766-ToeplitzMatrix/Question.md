@@ -1,11 +1,11 @@
 https://leetcode.com/problems/toeplitz-matrix/
 
-A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.
+**A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same element.**
 
 Now given an M x N matrix, return True if and only if the matrix is Toeplitz.
 
 
-Example 1:
+**Example 1:**
 
 Input:
 
@@ -23,7 +23,7 @@ In the above grid, the diagonals are:
 In each diagonal all elements are the same, so the answer is True.
 
 
-Example 2:
+**Example 2:**
 
 Input:
 
@@ -38,7 +38,7 @@ Explanation:
 The diagonal "[1, 2]" has different elements.
 
 
-Note:
+**Note:**
 
 matrix will be a 2D array of integers.
 matrix will have a number of rows and columns in range [1, 20].
