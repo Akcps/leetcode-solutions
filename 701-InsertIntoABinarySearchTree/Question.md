@@ -9,6 +9,7 @@ Note that there may exist multiple valid ways for the insertion, as long as the 
 For example, 
 
 Given the tree:
+
         4
        / \
       2   7
