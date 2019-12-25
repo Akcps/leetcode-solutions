@@ -15,7 +15,7 @@ Output: 15
 Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
 
 
-Example 2:
+**Example 2:**
 
 Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
 
