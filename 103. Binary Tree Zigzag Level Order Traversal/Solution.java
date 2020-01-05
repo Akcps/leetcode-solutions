@@ -26,6 +26,7 @@ class Solution {
             int n = queue.size();
             for(int i = 0; i < n; i++){
                 TreeNode cur = queue.poll();
+
                 if(level % 2 == 1)
                     curLevelList.add(cur.val);
                 else
