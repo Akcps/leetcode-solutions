@@ -6,7 +6,7 @@ class Solution {
     private void twoSum(int[] arr, int left, int targetSum, List<List<Integer>> threeSums) {
         int right = arr.length - 1;
 
-        while (left<right) {
+        while (left < right) {
 
             int targetDiff = targetSum - arr[left];
 
