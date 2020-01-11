@@ -3,7 +3,7 @@
  * Memory Usage: 49 MB, less than 53.71% of Java online submissions for 3Sum.
  */
 class Solution {
-    public void twoSum(int[] arr, int left, int targetSum, List<List<Integer>> threeSums) {
+    private void twoSum(int[] arr, int left, int targetSum, List<List<Integer>> threeSums) {
         int right = arr.length - 1;
 
         while (left<right) {
