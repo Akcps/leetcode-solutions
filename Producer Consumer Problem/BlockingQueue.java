@@ -51,12 +51,12 @@ public class BlockingQueue<E> {
 public class BlockingQueue<E> {
     private int max;
     private Queue<E> queue;
-    private Object object;
+    private Object lock;
 
     public BlockingQueue(int size) {
         this.max = size;
         this.queue = new LinkedList<>();
-        this.object = new Object();
+        this.lock = new Object();
     }
 
     public void put(E e) throws InterruptedException {
