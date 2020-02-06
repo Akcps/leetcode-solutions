@@ -9,7 +9,7 @@ class MedianFinder {
     /** initialize your data structure here. */
     public MedianFinder() {
         minHeap = new PriorityQueue<Integer>();
-        maxHeap = new PriorityQueue<Integer>((p1,p2)->p2-p1);
+        maxHeap = new PriorityQueue<Integer>((p1,p2) -> p2 - p1);
     }
 
     public void addNum(int num) {
@@ -29,7 +29,7 @@ class MedianFinder {
         if (maxHeap.size() > minHeap.size()) {
             return maxHeap.peek();
         } else {
-            return (maxHeap.peek() + minHeap.peek())/2.0;
+            return (maxHeap.peek() + minHeap.peek()) / 2.0;
         }
     }
 }
