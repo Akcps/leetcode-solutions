@@ -20,7 +20,7 @@ public class BlockingQueue<E> {
         lock.lock();
         try {
             if (queue.size() == max) {
-                notFull.wait();
+                notFull.await();
             }
             queue.add(e);
             notEmpty.signalAll();
@@ -33,7 +33,7 @@ public class BlockingQueue<E> {
         lock.lock();
         try {
             while (queue.size() == 0) {
-                notEmpty.wait();
+                notEmpty.await();
             }
             E item = queue.remove();
             notFull.signalAll();
