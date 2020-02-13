@@ -19,7 +19,7 @@ class Solution {
                 last[1] = interval[1];
                 result.add(last);
             } else {
-                last = result.get(result.size()-1);
+                last = result.get(result.size() - 1);
                 last[1]  = Math.max(interval[1], last[1]);
             }
 
