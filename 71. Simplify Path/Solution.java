@@ -13,7 +13,7 @@ class Solution {
         for (String dir: strs) {
 
             if (dir.equals(".") || dir.isEmpty()) {
-
+                continue;
             } else if (dir.equals("..")) {
                 if (!stack.isEmpty()) {
                     stack.pop();
