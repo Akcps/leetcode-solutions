@@ -4,7 +4,7 @@
  */
 class Solution {
     public int[][] kClosest(int[][] points, int K) {
-        PriorityQueue<Point> maxHeap = new PriorityQueue<Point>(K, new              Comparator<Point>() {
+        PriorityQueue<Point> maxHeap = new PriorityQueue<Point>(K, new Comparator<Point>() {
             @Override
             public int compare(Point p1, Point p2) {
                 if (p1.getDist() > p2.getDist())
