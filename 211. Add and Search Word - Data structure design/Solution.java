@@ -34,15 +34,15 @@ class WordDictionary {
 
         if (word.charAt(index) != '.') {
             if (root.children.containsKey(word.charAt(index)) ){
-                return find(root.children.get(word.charAt(index)), word, index+1);
+                return find(root.children.get(word.charAt(index)), word, index + 1);
             } else  {
                 return false;
             }
         }
 
-        for(Map.Entry<Character, TrieNode> child : root.children.entrySet()){
-            TrieNode n = child.getValue();
-            if(find(n, word, index+1)){
+        for(Character ch : root.children.keySet()){
+            TrieNode n = root.children.get(ch);
+            if(find(n, word, index + 1)){
                 return true;
             }
         }
