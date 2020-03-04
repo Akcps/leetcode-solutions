@@ -1,3 +1,6 @@
+/**
+ * Time Complexity: O(log _{3} n)
+ */
 class TernarySearch {
 
     private static int ternarySeach(int[] nums, int low, int high, int element) {
