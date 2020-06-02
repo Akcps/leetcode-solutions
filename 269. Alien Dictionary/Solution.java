@@ -1,66 +1,60 @@
 /**
- * Runtime: 4 ms, faster than 70.23% of Java online submissions for Alien Dictionary.
- * Memory Usage: 35.9 MB, less than 97.30% of Java online submissions for Alien Dictionary.
+ * Runtime: 4 ms, faster than 48.20% of Java online submissions for Alien Dictionary.
+ * Memory Usage: 39.8 MB, less than 5.41% of Java online submissions for Alien Dictionary.
  */
 class Solution {
-
-    Map<Character, Set<Character>> graph = new HashMap<>();
-    int[] inDegree = new int[26];
-
     public String alienOrder(String[] words) {
-        buildGraph(words);
-        return bfs(words);
-    }
 
-    private void buildGraph(String[] words){
-        for (String word: words) {
-            for (char c: word.toCharArray()) {
-                graph.putIfAbsent(c, new HashSet<>());
+        // Step 0: Create data structures and find all unique letters.
+        Map<Character, List<Character>> adjList = new HashMap<>();
+        Map<Character, Integer> counts = new HashMap<>();
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                counts.put(c, 0);
+                adjList.put(c, new ArrayList<>());
             }
         }
 
-
-        for (int i = 1; i < words.length; i++) {
-            String prev = words[i-1];
-            String cur = words[i];
-            int len = Math.min(prev.length(), cur.length());
-            for (int j = 0; j < len; j++) {
-                char out = prev.charAt(j);
-                char in = cur.charAt(j);
-                if (out != in) {
-                    if (!graph.get(out).contains(in)) {
-                        graph.get(out).add(in);
-                        inDegree[(int) in - 'a']++;
-                    }
+        // Step 1: Find all edges.
+        for (int i = 0; i < words.length - 1; i++) {
+            String word1 = words[i];
+            String word2 = words[i + 1];
+            // Check that word2 is not a prefix of word1.
+            if (word1.length() > word2.length() && word1.startsWith(word2)) {
+                return "";
+            }
+            // Find the first non match and insert the corresponding relation.
+            for (int j = 0; j < Math.min(word1.length(), word2.length()); j++) {
+                if (word1.charAt(j) != word2.charAt(j)) {
+                    adjList.get(word1.charAt(j)).add(word2.charAt(j));
+                    counts.put(word2.charAt(j), counts.get(word2.charAt(j)) + 1);
                     break;
                 }
             }
         }
-    }
 
-    private String bfs(String[] words) {
-        Queue<Character> q = new LinkedList<Character>();
-        for (char c: graph.keySet()) {
-            if (inDegree[(int) c-'a'] == 0) {
-                q.add(c);
+        // Step 2: Breadth-first search.
+        StringBuilder sb = new StringBuilder();
+        Queue<Character> queue = new LinkedList<>();
+        for (Character c : counts.keySet()) {
+            if (counts.get(c).equals(0)) {
+                queue.add(c);
             }
         }
-
-        StringBuilder result = new StringBuilder();
-        while(!q.isEmpty()) {
-            char out = q.poll();
-            result.append(out);
-            if (graph.get(out) == null)
-                continue;
-            for (char in: graph.get(out)) {
-                inDegree[(int) in - 'a']--;
-                if (inDegree[(int) in - 'a'] == 0) {
-                    q.add(in);
+        while (!queue.isEmpty()) {
+            Character c = queue.remove();
+            sb.append(c);
+            for (Character next : adjList.get(c)) {
+                counts.put(next, counts.get(next) - 1);
+                if (counts.get(next).equals(0)) {
+                    queue.add(next);
                 }
             }
         }
 
-        return result.length() == graph.size() ? result.toString(): "";
+        if (sb.length() < counts.size()) {
+            return "";
+        }
+        return sb.toString();
     }
-
 }
