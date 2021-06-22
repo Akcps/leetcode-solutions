@@ -34,3 +34,31 @@ class Solution {
     }
 
 }
+
+/**
+ * Runtime: 0 ms, faster than 100.00% of Java online submissions for Closest Binary Search Tree Value.
+ * Memory Usage: 39 MB, less than 30.16% of Java online submissions for Closest Binary Search Tree Value.
+ */
+
+class Solution {
+    int closest = -1;
+    double diff = Double.MAX_VALUE;
+
+    public int closestValue(TreeNode root, double target) {
+        findDiff(root, target);
+        return closest;
+    }
+
+    private void findDiff(TreeNode node, double target) {
+        if (node == null) {
+            return;
+        }
+        double currentDiff = Math.abs(node.val - target);
+        if (diff > currentDiff) {
+            closest = node.val;
+            diff = currentDiff;
+        }
+        findDiff(node.left, target);
+        findDiff(node.right, target);
+    }
+}
