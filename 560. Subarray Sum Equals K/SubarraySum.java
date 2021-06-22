@@ -17,3 +17,22 @@ class Solution {
         return count;
     }
 }
+
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        int count = 0;
+        int runningSum = 0;
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (int num: nums) {
+            runningSum += num;
+            // Starting from the beigining.
+            if (runningSum == k) {
+                count++;
+            }
+            // Subarray
+            count += countMap.getOrDefault(runningSum - k, 0);
+            countMap.put(runningSum, countMap.getOrDefault(runningSum, 0) + 1);
+        }
+        return count;
+    }
+}
