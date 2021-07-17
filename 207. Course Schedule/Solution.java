@@ -1,6 +1,8 @@
 /**
  * Runtime: 11 ms, faster than 43.74% of Java online submissions for Course Schedule.
  * Memory Usage: 44.5 MB, less than 95.38% of Java online submissions for Course Schedule.
+ * Time Complexity : O (E + V)
+ * Space Complexity: O (E + V)
  */
 class Solution {
 
@@ -19,8 +21,7 @@ class Solution {
         int count = 0;
         Queue<Integer> q = new LinkedList<Integer>();
         for (int k: graph.keySet()) {
-            if (inDegree.get(k) == null) continue;
-            if (inDegree.get(k) == 0)
+            if (inDegree.containsKey(k) && inDegree.get(k) == 0)
                 q.add(k);
         }
 
@@ -48,4 +49,5 @@ class Solution {
             graph.get(out).add(in);
         }
     }
+
 }
