@@ -1,6 +1,9 @@
 /**
- * Runtime: 6 ms, faster than 64.59% of Java online submissions for Course Schedule II.
- * Memory Usage: 44.2 MB, less than 93.90% of Java online submissions for Course Schedule II.
+ * Runtime: 5 ms, faster than 70.31% of Java online submissions for Course Schedule II.
+ * Memory Usage: 39.8 MB, less than 88.02% of Java online submissions for Course Schedule II.
+ * Time Complexity** : O (E + V)
+ * Space Complexity**: O (E + V)
+ * where |V| is the number of courses, and |E| is the number of dependencies/edges.
  */
 class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
