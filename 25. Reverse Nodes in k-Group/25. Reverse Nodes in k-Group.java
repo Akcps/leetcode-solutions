@@ -2,7 +2,7 @@
  * Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Nodes in k-Group.
  * Memory Usage: 39.5 MB, less than 32.41% of Java online submissions for Reverse Nodes in k-Group.
  * Time Complexity: O (n)
- * Space Complexity: O (1)
+ * Space Complexity: O (n/k) -> recursion stack
  */
 
 /**
