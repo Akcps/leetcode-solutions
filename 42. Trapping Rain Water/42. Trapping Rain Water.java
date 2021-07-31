@@ -1,6 +1,8 @@
 /**
  * Runtime: 1 ms, faster than 90.21% of Java online submissions for Trapping Rain Water.
  * Memory Usage: 38.6 MB, less than 68.49% of Java online submissions for Trapping Rain Water.
+ * Time Complexity: O (N)
+ * Space Complexity: O (N)
  */
 class Solution {
     public int trap(int[] arr) {
