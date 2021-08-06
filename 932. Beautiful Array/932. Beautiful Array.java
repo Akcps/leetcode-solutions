@@ -9,14 +9,14 @@ class Solution {
         res.add(1);
         while (res.size() < n) {
             List<Integer> temp = new ArrayList<>();
-            for (int e: res) {
-                if (2* e - 1 <= n) {
+            for (int e : res) {
+                if (2 * e - 1 <= n) {
                     temp.add(2 * e - 1);
                 }
             }
 
-            for (int e: res) {
-                if (2* e <= n) {
+            for (int e : res) {
+                if (2 * e <= n) {
                     temp.add(2 * e);
                 }
             }
