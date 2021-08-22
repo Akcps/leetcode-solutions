@@ -3,7 +3,7 @@
  * Memory Usage: 43.8 MB, less than 67.57% of Java online submissions for Graph Valid Tree.
  */
 class Solution {
-    private int [] parent;
+    private int[] parent;
 
     private int find(int p) {
         int root = p;
@@ -22,9 +22,9 @@ class Solution {
         for (int i = 0; i < edges.length; i++) {
             int root1 = find(edges[i][0]);
             int root2 = find(edges[i][1]);
-            if (root1 == root2)
+            if (root1 == root2) {
                 return false;
-
+            }
             parent[root2] = root1;
         }
 
@@ -58,7 +58,7 @@ class Solution {
     }
 
     private void buildGraph(int[][] edges) {
-        for (int[] edge: edges) {
+        for (int[] edge : edges) {
             Set<Integer> connected = graph.getOrDefault(edge[0], new HashSet<>());
             connected.add(edge[1]);
             graph.put(edge[0], connected);
@@ -70,7 +70,7 @@ class Solution {
 
     private boolean hasCycle(int vertex, int parent) {
         visited[vertex] = true;
-        for (int i: graph.getOrDefault(vertex, new HashSet<>())) {
+        for (int i : graph.getOrDefault(vertex, new HashSet<>())) {
             if (!visited[i]) {
                 if (hasCycle(i, vertex)) {
                     return true;
