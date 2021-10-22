@@ -11,7 +11,7 @@ class Solution {
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((a, b) -> a - b);
         minHeap.add(intervals[0][1]);
         for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] >= minHeap.peek())  {
+            if (intervals[i][0] >= minHeap.peek()) {
                 minHeap.poll();
             }
             minHeap.add(intervals[i][1]);
