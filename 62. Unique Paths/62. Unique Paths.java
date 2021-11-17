@@ -26,6 +26,10 @@ class Solution {
     }
 }
 
+/**
+ * Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Paths.
+ * Memory Usage: 35.6 MB, less than 85.29% of Java online submissions for Unique Paths
+ */
 class Solution {
     public int uniquePaths(int m, int n) {
         int[][] moves = new int[m][n];
