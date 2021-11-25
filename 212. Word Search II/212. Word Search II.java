@@ -1,3 +1,7 @@
+/**
+ * Runtime: 551 ms, faster than 35.50% of Java online submissions for Word Search II.
+ * Memory Usage: 40.7 MB, less than 18.45% of Java online submissions for Word Search II.
+ */
 class Solution {
 
     class TrieNode {
@@ -35,8 +39,9 @@ class Solution {
 
     public List<String> findWords(char[][] board, String[] words) {
         Trie trie = new Trie();
-        for (String word : words)
+        for (String word : words) {
             trie.add(word);
+        }
 
         boolean[][] visited = new boolean[board.length][board[0].length];
         Set<String> matchedWords = new HashSet();
@@ -49,9 +54,12 @@ class Solution {
     }
 
     private void findWords(char[][] board, int row, int col, Set<String> matchedWords, boolean[][] visited, TrieNode node) {
-        if (node.isWord)
+        if (node.isWord) {
             matchedWords.add(node.str);
-        if (row < 0 || row > board.length - 1 || col < 0 || col > board[0].length - 1 || visited[row][col] || node.children[board[row][col] - 'a'] == null) {
+        }
+
+        if (row < 0 || row > board.length - 1 || col < 0 || col > board[0].length - 1 || visited[row][col] ||
+                node.children[board[row][col] - 'a'] == null) {
             return;
         }
 
