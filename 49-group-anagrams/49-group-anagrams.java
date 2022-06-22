@@ -22,7 +22,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 26; i++) {
             sb.append('a' + i);
-            sb.append(count[i]);
+            sb.append('0' + count[i]);
             sb.append('#');
         }
         return sb.toString();
