@@ -15,10 +15,10 @@ class Solution {
     }
     
     public void countIslands(char[][] grid, int row, int col, boolean[][] visited) {
-        if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length) {
+        if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || visited[row][col]) {
             return;
         }
-        if (grid[row][col] == '1' && !visited[row][col]) {
+        if (grid[row][col] == '1') {
             visited[row][col] = true;
             countIslands(grid, row, col + 1, visited);
             countIslands(grid, row, col - 1, visited);
