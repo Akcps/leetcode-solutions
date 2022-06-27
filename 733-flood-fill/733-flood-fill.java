@@ -14,8 +14,6 @@ class Solution {
             for (int i = 0; i < 4; i++) {
                 int newRow = current[0] + r[i];
                 int newCol = current[1] + c[i];
-                System.out.println(newRow);
-                System.out.println(newCol);
                 if (newRow >= 0 && newCol >= 0 && newRow < image.length && newCol < image[0].length && image[newRow][newCol] == oldColor) {
                     queue.add(new int[] {newRow,newCol});
                 }
