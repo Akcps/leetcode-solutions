@@ -5,14 +5,8 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        
-        def greaterthan(self, other):
-            if(self.val > other.val):
-                return True
-            else:
-                return False
             
-        ListNode.__gt__ = greaterthan
+        ListNode.__gt__ = lambda self, other : self.val > other.val
     
         dummy = current = ListNode()
         heap = []
