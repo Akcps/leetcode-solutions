@@ -29,10 +29,10 @@ class Solution {
             if (low >= high) {
                 return null;
             } 
-            int searchVal = preorder[preIndex];
+            
+            int searchVal = preorder[preIndex++];
             TreeNode node = new TreeNode(searchVal);
             int partitionIndex = indexMap.get(searchVal);
-            preIndex++;
             node.left = constructTree(preorder, inorder, low, partitionIndex);
             node.right = constructTree(preorder, inorder, partitionIndex + 1, high);
             return node;
