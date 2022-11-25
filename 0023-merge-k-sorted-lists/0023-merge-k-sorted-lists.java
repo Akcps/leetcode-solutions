@@ -21,7 +21,6 @@ class Solution {
         
         while (!heap.isEmpty()) {
             ListNode tmp = heap.poll();
-            System.out.println(tmp.val);
             cur.next = tmp;
             tmp = tmp.next;
             if (tmp != null) {
