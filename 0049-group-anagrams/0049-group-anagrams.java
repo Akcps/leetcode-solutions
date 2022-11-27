@@ -27,8 +27,10 @@ class Solution {
         
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < 26; i++) {
-            s.append('a' + i);
-            s.append("" + ch[i] + ":");
+            if (ch[i] != 0) {
+               s.append('a' + i);
+               s.append("" + ch[i] + ":"); 
+            }
         }
         return s.toString();
     }
