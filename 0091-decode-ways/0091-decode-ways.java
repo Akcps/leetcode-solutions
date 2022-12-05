@@ -25,6 +25,7 @@ class Solution {
         }
         
         int count = numDecoding(s, start + 1);
+        
         if (start + 1 < s.length()) {
             Integer val = Integer.valueOf(s.substring(start, start + 2));
             if (val <= 26) {
