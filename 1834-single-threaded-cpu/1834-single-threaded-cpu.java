@@ -15,7 +15,7 @@ class Solution {
         int taskProcessedCount = 0;
         int time = 0;
         int taskIdx = 0;
-        while(taskProcessedCount < tasks.length || !heap.isEmpty()) {
+        while(taskProcessedCount < tasks.length) {
             if (heap.isEmpty() && time < taskList.get(taskIdx).start) {
                 time = taskList.get(taskIdx).start;
             }
