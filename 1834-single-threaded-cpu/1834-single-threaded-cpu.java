@@ -8,7 +8,6 @@ class Solution {
             taskList.add(new Task(tasks[i][0], tasks[i][1], i));
         }
         taskList.sort((a,b) -> (a.start - b.start));
-        System.out.println(taskList);
         
         PriorityQueue<Task> heap = new PriorityQueue<>((a,b) -> (a.processingTime != b.processingTime ? a.processingTime - b.processingTime: a.index - b.index));
         
