@@ -21,13 +21,15 @@ class Solution {
                             pushToStack = true;
                         } else if (Math.abs(asteroid) == stack.peek()) {
                             stack.pop();
+                            // don't loop as the asteroid is destroyed.
                             break;
                         } else {
-                            // do nothing
+                            // don't loop as the asteroid is smaller than the stack top
                             break;
                         } 
                     }
                     if (pushToStack) {
+                        // push to stack only when after the loop the -ve value is greater
                         stack.push(asteroid);
                     }
                 }
