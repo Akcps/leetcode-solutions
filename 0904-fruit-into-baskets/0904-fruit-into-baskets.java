@@ -25,15 +25,9 @@ class Solution {
             
             if (!found) {
                if (treesSelected.size() == 2) {
-                   int max = Integer.MIN_VALUE;
                    int min = Integer.MAX_VALUE;
-                   int maxKey = 0;
                    int minKey = 0;
                     for (int key: treesSelected.keySet()) {
-                        if (treesSelected.get(key) > max) {
-                            max = treesSelected.get(key);
-                            maxKey = key;
-                        }
                         if (treesSelected.get(key) < min) {
                             min = treesSelected.get(key);
                             minKey = key;
