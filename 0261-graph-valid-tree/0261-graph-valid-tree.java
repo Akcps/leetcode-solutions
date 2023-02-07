@@ -1,6 +1,4 @@
 class Solution {
-    
-    Map<Integer, List<Integer>> adjList;
     int[] parent;
     int[] rank;
     
@@ -29,18 +27,10 @@ class Solution {
                 return false;
             }
         }
-        
+
+        // step 2. check for cycle, nodes count should be equal to n-1
+
         return edges.length ==  n - 1;
-        
-        // step 2. check for cycle
-//         adjList = new HashMap<>();
-//         for (int[] edge: edges) {
-//             List<Integer> values = adjList.getOrDefault(edge[0], new ArrayList<>());
-//             values.add(edge[1]);
-//             adjList.put(edge[0], values);
-//         }
-        
-//         return true;
     }  
     
     private void union(int x, int y) {
