@@ -40,8 +40,6 @@ class Solution {
                         }
                     }
                    maxTrees = Math.max(maxTrees, end - start); // calculate max length 
-                   // System.out.println("min-key " + minKey);
-                   // System.out.println("max " + maxTrees);
                    treesSelected.remove(minKey);
                    start = min + 1; // start from min + 1
                } 
