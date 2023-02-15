@@ -19,20 +19,13 @@ class Solution {
                 idx--;
             }
             
-            // System.out.println("kDigit : " + kLastDigit);
-            // System.out.println("numDigit : " + numDigit);
-            // System.out.println("carry : " + carry);
-            
             int sum = kLastDigit + numDigit + carry;
             
             carry = sum / 10;
             sum = sum % 10;
             
-            // System.out.println("carry- after : " + carry);
-            // System.out.println("sum : " + sum);
             
             result.add(sum);
-            // System.out.println("idx : " + idx);
         }
         
         if (carry > 0) {
